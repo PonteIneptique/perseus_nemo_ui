@@ -11,9 +11,9 @@ class PerseusNemoUi(PluginPrototype):
 
     """
     HAS_AUGMENT_RENDER = False
-    TEMPLATES = {"main": resource_filename("perseus_nemo_ui", "data/templates")}
+    TEMPLATES = {
+        "main": resource_filename("aperire_ui", "data/templates/main"),
+        "arethusa": resource_filename("aperire_ui", "data/templates/arethusa")
+    }
     CSS = [resource_filename("perseus_nemo_ui","data/assets/css/theme-ext.css")]
-    STATICS = [
-        resource_filename("perseus_nemo_ui","data/assets/images/rev_running_man.png")
-    ]
 

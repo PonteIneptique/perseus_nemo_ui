@@ -1,6 +1,5 @@
 <div class="ctsurn">
-	<a href="http://catalog.perseus.org/cite-collections/versions/search?field_type=version&search={{ urn.upTo(urn['NO_PASSAGE']) }}" target='_blank'>Catalog Record</a> -
-	<a href="http://www.perseids.org/apps/treebank?text_uri=http://perseids.org/cts5/nemo/citations/{{urn}}" target='_blank'>Create Treebank</a> <br />
+	<a href="http://www.perseids.org/apps/treebank?text_uri=http%3A%2F%2Faperire.herokuapp.com%2Fapi%2Fcts%3Frequest%3DGetPassage%26urn%3D{{urn}}" target='_blank'>Create Treebank</a> <br />
 	<a href="/api/cts?request=GetPassage&urn={{urn}}" target='_blank'>{{urn}}</a>
 </div>
 <script>
@@ -9,7 +8,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-72072451-2', 'auto');
+  ga('create', 'UA-81881724-1', 'auto');
   ga('send', 'pageview');
 
 </script>

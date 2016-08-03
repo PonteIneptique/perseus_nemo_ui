@@ -8,16 +8,19 @@
 {% endmacro %}
 
 {% macro tabs(text, treebank) %}
-  	<div class="row">
-  		<div class="col-md-6">
-  			<h4>Texte</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Texte</h4>
             {{text}}
-  		</div>
-  		<div class="col-md-6">
-  			<h4>Treebank</h4>
+      </div>
+      <div class="col-md-6" id="treebank" style="min-height:800px;">
+        <h4>Treebank</h4>
+        <em><small>Taper U et I pour naviguer parmi les treebanks</small></em>
+            <div class="__artsa" style="min-height:800px;">
             {{ treebank }}
-  		</div>
-  	</div>
+            </div>
+      </div>
+    </div>
 {% endmacro %}
 
 {% block article %}
@@ -33,22 +36,20 @@
 <script type="text/javascript">
 $(document).ready(function() {
     var loaded = false;
-    if(!loaded) {
-      $.get("{{ url_for(".r_arethusa_dependencies") }}", function(deps) {
-          window.i18npath = "{{url_for(".r_arethusa_assets", filename="i18n/")}}";
-          window.dagred3path = "vendor/dagre-d3.min.js";
-          loadArethusaWidget(
-              "treebank_container",
-              "{{ url_for(".r_arethusa_assets", filename="js/") }}",
-              "{{ url_for(".r_arethusa_config") }}",
-              {
-                  doc : "{{ annotations | annotation_filter("http://data.perseus.org/rdfvocab/treebank", 1) | attr("sha") }}"
-              },
-              deps
-          );
-          loaded = true;
-      });
-    }
+    $.get("{{ url_for(".r_arethusa_dependencies") }}", function(deps) {
+        window.i18npath = "{{url_for(".r_arethusa_assets", filename="i18n/")}}";
+        window.dagred3path = "vendor/dagre-d3.min.js";
+        loadArethusaWidget(
+            "treebank_container",
+            "{{ url_for(".r_arethusa_assets", filename="js/") }}",
+            "{{ url_for(".r_arethusa_config") }}",
+            {
+                doc : "{{ annotations | annotation_filter("http://data.perseus.org/rdfvocab/treebank", 1) | attr("sha") }}"
+            },
+            deps
+        );
+        loaded = true;
+    });
 });
 </script>
 {% endblock %}

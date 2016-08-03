@@ -15,5 +15,5 @@ class AperireUI(PluginPrototype):
         "main": resource_filename("aperire_ui", "data/templates/main"),
         "arethusa": resource_filename("aperire_ui", "data/templates/arethusa")
     }
-    CSS = [resource_filename("perseus_nemo_ui","data/assets/css/theme-ext.css")]
+    CSS = [resource_filename("aperire_ui","data/assets/css/theme-ext.css")]
 

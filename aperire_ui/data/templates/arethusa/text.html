@@ -33,26 +33,22 @@
 <script type="text/javascript">
 $(document).ready(function() {
     var loaded = false;
-    $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
-        if(!loaded) {
-            if(e.target.hash == "#treebank") {
-                $.get("{{ url_for(".r_arethusa_dependencies") }}", function(deps) {
-                    window.i18npath = "{{url_for(".r_arethusa_assets", filename="i18n/")}}";
-                    window.dagred3path = "vendor/dagre-d3.min.js";
-                    loadArethusaWidget(
-                        "treebank_container",
-                        "{{ url_for(".r_arethusa_assets", filename="js/") }}",
-                        "{{ url_for(".r_arethusa_config") }}",
-                        {
-                            doc : "{{ annotations | annotation_filter("http://data.perseus.org/rdfvocab/treebank", 1) | attr("sha") }}"
-                        },
-                        deps
-                    );
-                    loaded = true;
-                })
-            }
-        }
-    });
+    if(!loaded) {
+      $.get("{{ url_for(".r_arethusa_dependencies") }}", function(deps) {
+          window.i18npath = "{{url_for(".r_arethusa_assets", filename="i18n/")}}";
+          window.dagred3path = "vendor/dagre-d3.min.js";
+          loadArethusaWidget(
+              "treebank_container",
+              "{{ url_for(".r_arethusa_assets", filename="js/") }}",
+              "{{ url_for(".r_arethusa_config") }}",
+              {
+                  doc : "{{ annotations | annotation_filter("http://data.perseus.org/rdfvocab/treebank", 1) | attr("sha") }}"
+              },
+              deps
+          );
+          loaded = true;
+      });
+    }
 });
 </script>
 {% endblock %}

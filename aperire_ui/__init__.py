@@ -4,7 +4,7 @@ from flask_nemo.plugin import PluginPrototype
 from pkg_resources import resource_filename
 
 
-class PerseusNemoUi(PluginPrototype):
+class AperireUI(PluginPrototype):
     """
         The Breadcrumb plugin is enabled by default in Nemo.
         It can be overwritten or removed. It simply adds a breadcrumb

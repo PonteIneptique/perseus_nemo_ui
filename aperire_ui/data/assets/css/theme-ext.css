@@ -55,3 +55,6 @@ ol > li:hover {
 #reading-container article {
   width:90%;
 }
+#treebank_container {
+  height:600px;
+}

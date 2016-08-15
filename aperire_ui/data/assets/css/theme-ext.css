@@ -58,3 +58,6 @@ ol > li:hover {
 #treebank_container {
   height:600px;
 }
+span[token-selector="state.tokens"] {
+  display:none;
+}

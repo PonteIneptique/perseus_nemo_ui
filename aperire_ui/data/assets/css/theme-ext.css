@@ -57,7 +57,7 @@ ol > li:hover {
   max-width:90%!important;
 }
 #treebank_container {
-  height:600px;
+  height:800px;
 }
 span[token-selector="state.tokens"] {
   display:none;
